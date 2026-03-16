@@ -1,5 +1,5 @@
 {
-  "name": "expo-share-intent",
+  "name": "expo-share-multi-intent",
   "version": "6.0.0",
   "description": "use native share intent for ios and android with expo",
   "homepage": "https://github.com/achorein/expo-share-intent/",
