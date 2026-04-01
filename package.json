@@ -2,15 +2,15 @@
   "name": "expo-share-multi-intent",
   "version": "6.0.0",
   "description": "use native share intent for ios and android with expo",
-  "homepage": "https://github.com/achorein/expo-share-intent/",
+  "homepage": "https://github.com/voidmaster000/expo-share-multi-intent/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/achorein/expo-share-intent.git"
+    "url": "git+https://github.com/voidmaster000/expo-share-multi-intent.git"
   },
-  "author": "achorein (https://github.com/achorein)",
+  "author": "voidmaster000 (https://github.com/voidmaster000)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/achorein/expo-share-intent/issues"
+    "url": "https://github.com/voidmaster000/expo-share-multi-intent/issues"
   },
   "funding": [
     {
