@@ -31,9 +31,6 @@
     "ios-custom-view",
     "ios-context-menu"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
