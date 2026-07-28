@@ -12,22 +12,21 @@
     "test": "CI=1 expo install --check",
     "test:fix": "expo install --fix",
     "doctor": "npx --yes expo-doctor@latest",
-    "lint": "eslint .",
-    "postinstall": "patch-package"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@expo/metro-runtime": "~55.0.6",
-    "expo": "^55.0.0",
-    "expo-constants": "~55.0.7",
-    "expo-linking": "~55.0.7",
-    "expo-router": "~55.0.0",
-    "expo-splash-screen": "~55.0.9",
-    "expo-status-bar": "~55.0.4",
+    "@expo/metro-runtime": "~57.0.3",
+    "expo": "~57.0.4",
+    "expo-constants": "~57.0.3",
+    "expo-linking": "~57.0.2",
+    "expo-router": "~57.0.4",
+    "expo-splash-screen": "~57.0.2",
+    "expo-status-bar": "~57.0.0",
     "patch-package": "^8.0.0",
-    "react": "19.2.0",
-    "react-native": "0.83.2",
-    "react-native-safe-area-context": "~5.6.0",
-    "react-native-screens": "~4.24.0"
+    "react": "19.2.3",
+    "react-native": "0.86.0",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "4.25.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
@@ -37,7 +36,7 @@
     "eslint": "^8.57.1",
     "eslint-config-universe": "^12.0.0",
     "prettier": "^3.0.3",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.3"
   },
   "private": true,
   "expo": {

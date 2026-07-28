@@ -19,15 +19,17 @@ Ensure you use versions that work together
 
 | Expo       | Supported `expo-share-intent` version |
 | ---------- | ------------------------------------- |
+| **SDK 57** | 8.0+                                  |
+| **SDK 56** | 7.0+                                  |
 | **SDK 55** | 6.0+                                  |
 | **SDK 54** | 5.0+                                  |
-| **SDK 53** | 4.0+                                  |
 
 <details>
 <summary>📋 Legacy versions</summary>
 
 | Expo       | Supported `expo-share-intent` version |
 | ---------- | ------------------------------------- |
+| **SDK 53** | 4.0+                                  |
 | **SDK 52** | 3.0+                                  |
 | **SDK 51** | 2.0+                                  |
 | **SDK 50** | 1.0+                                  |
@@ -58,9 +60,19 @@ yarn add expo-share-intent
 npm install expo-share-intent
 ```
 
+> More info in [#13](https://github.com/achorein/expo-share-intent/issues/13) and [FAQ](https://github.com/achorein/expo-share-intent/edit/main/README.md#config-sync-failed)
+
+**Requirement: `expo-linking`**
+
+Since Expo52, you also need to install `expo-linking` in your app :
+
+```
+expo install expo-linking
+```
+
 **Requirement: `patch-package`**
 
-For the moment this package need a post-install script
+up to version 5.0 this package need a post-install script, if you are on Expo 55 (v6.0+) you don't need this anymore.
 
 - copy the [xcode patch](https://github.com/achorein/expo-share-intent/blob/main/example/basic/patches/xcode%2B3.0.1.patch) in you `patches` project directory (like example)
 - add post-install script to `package.json`
@@ -76,16 +88,6 @@ For the moment this package need a post-install script
 
 ```bash
 yarn add patch-package
-```
-
-> More info in [#13](https://github.com/achorein/expo-share-intent/issues/13) and [FAQ](https://github.com/achorein/expo-share-intent/edit/main/README.md#config-sync-failed)
-
-**Requirement: `expo-linking`**
-
-Since Expo52, you also need to install `expo-linking` in your app :
-
-```
-expo install expo-linking
 ```
 
 **Into your `app.json`:**
@@ -199,6 +201,7 @@ Simply choose content types you need :
 | iosActivationRules            | Allow **text** sharing with `"NSExtensionActivationSupportsText": true`<br/>**Url** sharing with `"NSExtensionActivationSupportsWebURLWithMaxCount": 1` and `"NSExtensionActivationSupportsWebPageWithMaxCount": 1`<br/>**Images** sharing with `"NSExtensionActivationSupportsImageWithMaxCount": 1`<br/>**Videos** sharing with `"NSExtensionActivationSupportsMovieWithMaxCount": 1`<br/>**Files and audio** sharing with `"NSExtensionActivationSupportsFileWithMaxCount": 1`<br/>_default value_: `{ "NSExtensionActivationSupportsWebURLWithMaxCount": 1, "NSExtensionActivationSupportsWebPageWithMaxCount": 1 }"`<br/>_More info in apple developper doc [here](https://developer.apple.com/documentation/bundleresources/information_property_list/nsextension/nsextensionattributes/nsextensionactivationrule)_<br/>you can also provide a custom query (ex: `"iosActivationRules": "SUBQUERY (...)"`) |
 | iosShareExtensionName         | override `CFBundleDisplayName` the extension `info.plist`, also used as extension name for xcode target (ex: `ExpoShareIntent Example Extension`, folder: `ExpoShareIntentExampleExtension`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | iosAppGroupIdentifier         | custom application group identifier for `com.apple.security.application-groups` (ex: `group.custom.exposhareintent.example`) cf [#94](https://github.com/achorein/expo-share-intent/issues/94)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| iosHideView                   | make share extension transparent to eliminate modal flash (default: true)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | androidIntentFilters          | **one file sharing** array of MIME types :`"text/*"` / `"image/*"` / `"video/*"` / `"*/*"`<br/>_default value_: `["text/*"]` (text and url)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | androidMultiIntentFilters     | **multiple files sharing** array of MIME types : `"image/*"` / `"video/*"` / `"audio/*`/ `"*/*"`<br/>_default value_: `[]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | androidMainActivityAttributes | _default value_: `{ "android:launchMode": "singleTask" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
