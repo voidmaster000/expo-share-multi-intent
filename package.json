@@ -1,6 +1,6 @@
 {
   "name": "expo-share-multi-intent",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "use native share intent for ios and android with expo",
   "homepage": "https://github.com/voidmaster000/expo-share-multi-intent/",
   "repository": {
